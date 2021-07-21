@@ -1,4 +1,6 @@
 const express = require('express');
+const redis = require("redis");
+const rClient = redis.createClient();
 
 const app = express();
 const PORT = process.env.PORT || 8080;
