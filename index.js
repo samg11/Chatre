@@ -1,6 +1,7 @@
 const express = require('express');
-const redis = require("redis");
-const rClient = redis.createClient();
+const { createUser } = require('./db');
+
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 const server = require("http").createServer(app);
 
 app.get('/', (req, res) => {
+    createUser('samg11', 'hello');
     res.send('Welcome to chatre');
 });
 
